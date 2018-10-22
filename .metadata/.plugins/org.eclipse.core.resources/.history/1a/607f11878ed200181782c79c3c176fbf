@@ -1,0 +1,35 @@
+import java.awt.*;
+import java.awt.geom.*;
+import javax.swing.*;
+
+public class ClockIcon implements Icon{
+	private int height;
+	private int width;
+	private int
+	
+	
+	public ClockIcon(int aWidth)
+	{
+		width = aWidth;
+	}
+
+	@Override
+	public int getIconHeight() {
+		// TODO Auto-generated method stub
+		return height;
+	}
+
+	@Override
+	public int getIconWidth() {
+		// TODO Auto-generated method stub
+		return width;
+	}
+
+	@Override
+	public void paintIcon(Component c, Graphics g, int x, int y) {
+		// TODO Auto-generated method stub
+		Graphics2D g2 = (Graphics2D) g;
+		
+		
+	}
+}

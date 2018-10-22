@@ -1,0 +1,19 @@
+import javax.swing.*;
+
+public class ClockTester {
+
+	
+	public static void main(String[] args)
+	{
+		JFrame frame = new JFrame();
+		ClockIcon icon = new ClockIcon(200);
+		JLabel label = new JLabel(icon);
+		
+		final int width = 50;
+		JTextField text = new JTextField(width);
+		
+		frame.setLayeredPane(new FlowLayout());
+		
+		
+	}
+}

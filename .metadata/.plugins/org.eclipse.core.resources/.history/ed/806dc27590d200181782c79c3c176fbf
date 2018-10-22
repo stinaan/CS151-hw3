@@ -1,0 +1,50 @@
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
+
+import javax.swing.*;
+
+public class ClockTester {
+
+	
+	public static void main(String[] args)
+	{
+		JFrame frame = new JFrame();
+		ClockIcon icon = new ClockIcon(200);
+		JLabel label = new JLabel(icon);
+		
+		final int width = 50;
+		JTextField text = new JTextField(width);
+		
+		frame.setLayout(new FlowLayout());
+		
+		//adds JPanels to JFrame
+		frame.add(label);
+		frame.add(text);
+		
+		ActionListener listener = new
+				ActionListener()
+				{
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						label.repaint();
+						Date now = new Date();
+						text.setText(now.toString());
+						
+						
+					}
+					
+				};
+				final int DELAY = 1000;
+				Timer t = new Timer(DELAY, listener);
+				t.start();
+				
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.pack();
+				frame.setVisible(true);
+		
+	}
+}

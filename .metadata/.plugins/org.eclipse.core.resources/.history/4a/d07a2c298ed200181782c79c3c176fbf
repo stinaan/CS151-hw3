@@ -1,0 +1,11 @@
+import java.awt.*;
+import java.awt.geom.*;
+import javax.swing.*;
+
+public class ClockIcon implements Icon{
+
+	public ClockIcon()
+	{
+		
+	}
+}

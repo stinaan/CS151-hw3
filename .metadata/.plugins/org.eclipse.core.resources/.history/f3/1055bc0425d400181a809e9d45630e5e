@@ -1,0 +1,65 @@
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
+/**
+   A class for testing an implementation of the Observer pattern.
+*/
+public class ObserverTester
+{
+   /**
+      Creates a DataModel and attaches barchart and textfield listeners
+      @param args unused
+   */
+   public static void main(String[] args)
+   {
+      ArrayList<Double> data = new ArrayList<Double>();
+
+      data.add(new Double(33.0));
+      data.add(new Double(44.0));
+      data.add(new Double(22.0));
+      data.add(new Double(22.0));
+
+      DataModel model = new DataModel(data);
+
+      TextFrame frame = new TextFrame(model);
+
+      BarFrame barFrame = new BarFrame(model);
+      
+      MouseListener listener = new 
+    		  MouseListener(){
+    		  public void mousePressed(MouseEvent e) {
+    				// TODO Auto-generated method stub
+    				int x = e.getX();
+    				int y = e.getY();
+    				
+    				if(y >=0 && y <barFrame.getBarHeight()*1)
+    				{
+    					dataModel.update(0, x);
+    					//a.get(0);
+    				}
+    				else if(y >=barHeight*1 && y <barFrame.getBarHeight()*2)
+    				{
+    					dataModel.update(1, x);
+    					a.get(1);
+    				}
+    				else if(y >=barHeight*2 && y <barHeight*3)
+    				{
+    					dataModel.update(2, x);
+    					a.get(2);
+    				}
+    				else if(y >=barHeight*3 && y <=barHeight*4)
+    				{
+    					dataModel.update(3, x);
+    					a.get(3);
+    				}
+    		  }
+      }
+      
+      barFrame.addMouseListener(BarFrame.mousePressed(this));
+      
+
+      model.attach(barFrame);
+      
+      
+   }
+}

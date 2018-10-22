@@ -1,0 +1,54 @@
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
+public class ShapeIcon implements Icon{
+	private int width;
+	private int height;
+	private MoveableShape shape;
+	private ArrayList<MoveableShape> shapeList = new ArrayList<MoveableShape>();
+
+	
+	
+	public ShapeIcon(MoveableShape s, int w, int h)
+	{
+		this.shape = s;
+		this.width = w;
+		this.height = h;
+		shapeList.add(s);
+	}
+
+	@Override
+	public int getIconHeight() {
+		// TODO Auto-generated method stub
+		return width;
+	}
+
+	@Override
+	public int getIconWidth() {
+		// TODO Auto-generated method stub
+		return height;
+	}
+
+	@Override
+	public void paintIcon(Component c, Graphics g, int x, int y) {
+		// TODO Auto-generated method stub
+		Graphics2D g2 = (Graphics2D) g;
+		while (!shapeList.isEmpty())
+		{
+			for (MoveableShape m: shapeList)
+			{
+				MoveableShape s = (MoveableShape) m;
+				m.draw(g2);
+				shape.draw(g2);
+			}
+			break;
+		}
+		
+
+		//g2.draw(s);
+		
+		//shape.draw(g2);
+	}
+	
+	
+}

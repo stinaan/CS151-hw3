@@ -1,0 +1,12 @@
+import javax.swing.*;
+
+public class ClockTester {
+
+	
+	public static void main(String[] args)
+	{
+		JFrame frame = new JFrame();
+		ClockIcon icon = new ClockIcon(100);
+		
+	}
+}
